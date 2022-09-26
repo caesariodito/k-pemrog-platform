@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Ganjil/Genap - 205314159 - Praktikum 3</title>
+    </head>
+    <body>
+        <h1>Program Odd-Even Counter</h1>
+        <script>
+            'use strict'
+
+            let numbers = []
+
+            let input = true
+            let counter = 0
+            let tempNum = 0
+            while (input) {
+                tempNum = prompt('Masukkan angka ke-' + (counter + 1))
+                numbers[counter] = parseInt(tempNum)
+                input = confirm('Anda ingin memasukkan angka lagi?')
+                counter++
+            }
+
+            let odd = 0
+            let even = 0
+            numbers.forEach(function (number) {
+                if (number % 2 === 0) {
+                    even++
+                } else {
+                    odd++
+                }
+            })
+
+            console.log(numbers)
+            alert('odd: ' + odd + '\neven: ' + even)
+            console.log('even: ' + even)
+            console.log('odd: ' + odd)
+        </script>
+    </body>
+</html>

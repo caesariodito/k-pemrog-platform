@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Calculator - 205314159 - Praktikum 3</title>
+    </head>
+    <body>
+        <h1>Program Calculator</h1>
+        <script>
+            'use strict'
+
+            function operation(opr, a, b) {
+                if (opr === '^') {
+                    return Math.pow(a, b)
+                } else if (opr === '*') {
+                    return a * b
+                } else if (opr === '/') {
+                    return a / b
+                } else if (opr === '+') {
+                    return a + b
+                } else if (opr === '-') {
+                    return a - b
+                }
+            }
+
+            let loop = true
+
+            while (loop) {
+                let number1 = parseInt(prompt('Masukkan angka pertama: '))
+
+                let opr = prompt(
+                    'Masukkan operator yang ingin digunakan: (^, *, /, +, -)'
+                )
+
+                let number2 = parseInt(prompt('Masukkan angka kedua: '))
+
+                alert(operation(opr, number1, number2))
+                console.log(operation(opr, number1, number2))
+
+                loop = confirm('Ingin mengulang?')
+            }
+        </script>
+    </body>
+</html>

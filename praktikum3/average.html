@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Rerata - 205314159 - Praktikum 3</title>
+    </head>
+    <body>
+        <h1>Program Average</h1>
+        <script>
+            'use strict'
+
+            let input = true
+            let counter = 0
+            let numbers = 0
+            let tempNum = 0
+            while (input) {
+                tempNum = prompt('Masukkan angka ke-' + (counter + 1))
+                numbers += parseInt(tempNum)
+                input = confirm('Anda ingin memasukkan angka lagi?')
+                counter++
+            }
+
+            alert('average: ' + numbers / counter)
+            console.log('average: ' + numbers / counter)
+        </script>
+    </body>
+</html>
