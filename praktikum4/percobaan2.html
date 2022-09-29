@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>205314159 - Menggunakan Array</title>
+    <script type="text/javascript">
+      function showDaftarBunga() {
+        var listBunga = ['Mawar', 'Melati', 'Kamboja']
+        var htmlBunga = '<ol>'
+        for (var i = 0; i < listBunga.length; i++) {
+          htmlBunga += '<li>' + listBunga[i]
+        }
+        htmlBunga += '</ol>'
+
+        document.getElementById('content').innerHTML = htmlBunga
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Jenis-jenis Bunga</h1>
+    <div id="content"></div>
+    <script type="text/javascript">
+      showDaftarBunga()
+    </script>
+  </body>
+</html>

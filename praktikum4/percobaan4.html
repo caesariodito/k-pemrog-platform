@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>205314159 - Kalkulator</title>
+    <script>
+      function jumlah(a, b) {
+        return a + b
+      }
+
+      function kurang(a, b) {
+        return a - b
+      }
+
+      function run(param) {
+        let bil1 = parseInt(document.getElementById('bilangan1').value)
+        let bil2 = parseInt(document.getElementById('bilangan2').value)
+        if (param === 'tambah') {
+          document.getElementById('hasil').value = jumlah(bil1, bil2)
+        } else {
+          document.getElementById('hasil').value = kurang(bil1, bil2)
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Kalkulator Tambah/Kurang</h1>
+    <form action="">
+      <label for="bilangan1">Bilangan 1:</label>
+      <input type="text" id="bilangan1" />
+      <br />
+      <label for="bilangan2">Bilangan 2:</label>
+      <input type="text" id="bilangan2" />
+      <br />
+      <input type="button" value="Tambah" onclick="run('tambah')" />
+      <input type="button" value="Kurang" onclick="run('kurang')" />
+      <br />
+      <label for="hasil">Hasil: </label>
+      <input type="text" id="hasil" />
+    </form>
+  </body>
+</html>

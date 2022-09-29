@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>205314159 - Login Form</title>
+    <script type="text/javascript">
+      function checkUsername() {
+        var msg = document.getElementById('feedback')
+        var usr = document.getElementById('username')
+        if (usr.value.length < 5) {
+          msg.textContent = 'Username harus terdiri dari 5 karakter atau lebih'
+        } else {
+          msg.textContent = ''
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Website Para Raja</h1>
+    <h2>New Account</h2>
+    <form action="#">
+      <label for="username">Create Username: </label>
+      <input type="text" id="username" onkeypress="checkUsername()" />
+      <div id="feedback"></div>
+
+      <label for="password">Create Password: </label>
+      <input type="password" id="password" />
+
+      <input type="submit" value="sign up" />
+    </form>
+  </body>
+</html>
