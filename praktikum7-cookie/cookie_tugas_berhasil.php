@@ -14,7 +14,7 @@
     setcookie("noInduk", $_POST['noInduk']);
     setcookie("nama", $_POST['nama']);
     setcookie("status", $_POST['status']);
-    setcookie("minat", implode(",", $_POST['minat']));
+    setcookie("minat", implode(", ", $_POST['minat']));
     ?>
 </body>
 
