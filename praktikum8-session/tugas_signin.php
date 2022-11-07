@@ -24,7 +24,7 @@
 
     if ($username != $defUsername or $password != $defPassword) {
         echo "<h1>Maaf, username atau password anda salah";
-        echo "<a href='tugas_login.php'>coba kembali</a>";
+        echo "<br> <a href='tugas_login.php'>coba kembali</a>";
     } else {
         session_start();
         $_SESSION['username'] = $username;
