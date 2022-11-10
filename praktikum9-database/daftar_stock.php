@@ -46,28 +46,28 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <?php
-                if (mysqli_num_rows($result) > 0) {
-                    // output data of each row
-                    $i = 1;
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo
+                    "<tr>" .
                         "<td>" . $i . "</td>" .
-                            "<td>" . $row["kode"] . "</td>" .
-                            "<td>" . $row["nama"] . "</td>" .
-                            "<td>" . $row["jenis"] . "</td>" .
-                            "<td>" . $row["lokasi"] . "</td>" .
-                            "<td>Rp. " . number_format($row["harga"]) . "</td>" .
-                            "<td>" . $row["jumlah"] . "</td>";
-                    }
-                } else {
-                    echo "<td>0 results</td>";
+                        "<td>" . $row["kode"] . "</td>" .
+                        "<td>" . $row["nama"] . "</td>" .
+                        "<td>" . $row["jenis"] . "</td>" .
+                        "<td>" . $row["lokasi"] . "</td>" .
+                        "<td>Rp. " . number_format($row["harga"]) . "</td>" .
+                        "<td>" . $row["jumlah"] . "</td>" .
+                        "</tr>";
                 }
-                // $conn->close();
-                mysqli_close($conn);
-                ?>
-            </tr>
+            } else {
+                echo "<td>0 results</td>";
+            }
+            // $conn->close();
+            mysqli_close($conn);
+            ?>
         </tbody>
     </table>
 
