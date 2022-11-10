@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <h1>INPUT STOK GUDANG TOKO KELONTONG BAHAGIA</h1>
+    <h1>INPUT STOK GUDANG <br> TOKO KELONTONG BAHAGIA</h1>
     <a href="daftar_stock.php">| Lihat Daftar Stok |</a>
 
     <br> <br>
