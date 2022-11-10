@@ -12,11 +12,11 @@ if (!$conn) {
 }
 
 $kode = $_POST['kodeBarang'];
-$nama = $_POST['namaBarang'];
-$jenis = $_POST['jenis'] == 1 ? "Makanan" : "Non Makanan";
-$lokasi = $_POST['lokasi'];
-$harga = $_POST['harga'];
-$jumlah = $_POST['jumlahStok'];
+$nama = isset($_POST['namaBarang']) ? $_POST['namaBarang'] : "";
+$jenis = isset($_POST['jenis']) ? ($_POST['jenis'] == 1 ? "Makanan" : "Non Makanan") : "";
+$lokasi = isset($_POST['lokasi']) ? $_POST['lokasi'] : "";
+$harga = isset($_POST['harga']) ? $_POST['harga'] : "";
+$jumlah = isset($_POST['jumlahStok']) ? $_POST['jumlahStok'] : "";
 
 $action = strtolower($_POST['button']);
 
