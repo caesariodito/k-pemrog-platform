@@ -34,12 +34,11 @@
 				<td>Kelas</td>
 				<td>
 					<select name="kelas">
-						<option value="A">A</option>
-						<option value="B">B</option>
-						<option value="C">C</option>
-						<option value="D">D</option>
-						<option value="E">E</option>
-						<option value="F">F</option>
+						<?php
+							for ($i = 'A'; $i != 'AA'; $i++){
+								echo "<option value='$i'>$i</option>";
+							}
+						?>
 					</select>
 				</td>
 			</tr>
@@ -60,14 +59,15 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Jumlah Stok</td>
-				<td><input type="text" name="jumlahStok"></td>
+				<td>Jam Mulai - Jam Berakhir</td>
+				<td>
+				<input type="text" name="jamStart">
+				<input type="text" name="jamEnd">
+			</td>
 			</tr>
 			<tr>
 				<td colspan="3">
 					<input type="submit" name="button" value="Simpan">
-					<input type="submit" name="button" value="Update">
-					<input type="submit" name="button" value="Hapus">
 				</td>
 			</tr>
 		</table>
