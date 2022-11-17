@@ -20,7 +20,7 @@
 
 	<br> <br>
 
-	<form id="form1" action="query.php" method="POST">
+	<form action="query.php" method="POST">
 		<table>
 			<tr>
 				<td>Kode Matakuliah</td>
@@ -35,11 +35,13 @@
 				<td>
 					<select name="kelas">
 						<?php
-							for ($i = 'A'; $i != 'AA'; $i++){
-								echo "<option value='$i'>$i</option>";
-							}
+						for ($i = 'A'; $i != 'AA'; $i++) {
+							echo "<option value='$i'>$i</option>";
+						}
 						?>
 					</select>
+					<input type="checkbox" name="praktikum">
+					<label for="praktikum">Praktikum?</label>
 				</td>
 			</tr>
 			<tr>
@@ -61,9 +63,9 @@
 			<tr>
 				<td>Jam Mulai - Jam Berakhir</td>
 				<td>
-				<input type="text" name="jamStart">
-				<input type="text" name="jamEnd">
-			</td>
+					<input type="text" name="jamStart">
+					<input type="text" name="jamEnd">
+				</td>
 			</tr>
 			<tr>
 				<td colspan="3">

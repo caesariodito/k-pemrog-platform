@@ -6,6 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>205314159 - Lihat Jadwal</title>
+
+	<style>
+	li {
+		padding: 3px;
+	}
+	</style>
 </head>
 
 <body>
@@ -49,47 +55,37 @@
 	</form>
 
 	<div class="jadwal">
-
 		<?php
+
         if ($filterHari != 'Semua') {
-            $sql = "SELECT kode, matakuliah, kelas, pengampu, hari, jam FROM jadwal WHERE hari='$filterHari'";
+            $arrayHari = [$filterHari];
+        } else {
+            $arrayHari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        }
+
+        foreach ($arrayHari as $hari) {
+            $sql = "SELECT id, kode, matakuliah, kelas, pengampu, jam FROM jadwal WHERE hari='$hari'";
 
             $result = mysqli_query($conn, $sql);
 
+            echo "<h2>$hari</h2>";
             echo "<ol>";
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo  "<li>" . $row["kode"] . " : " . $row["matakuliah"] . " : " . $row["kelas"] . " : " . $row["pengampu"] . " : " . $row["jam"];
+                    echo "<form action='edit_jadwal.php' method='post'>";
+                    echo "<li>" . $row["kode"] . " : " . $row["matakuliah"] . " : " . $row["kelas"] . " : " . $row["pengampu"] . " : "
+                        . $row["jam"] . "<input type='hidden' name='id' value='" . $row["id"] . "'> <button type='submit' value='edit' name='button'>Edit</button> <button type='submit' value='delete' name='button'>Delete</button>" . "</li>";
+                    echo "</form>";
                 }
             } else {
                 echo "<p>Tidak ada</p>";
             }
             echo "</ol>";
-        } else {
-
-            $arrayHari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-
-            foreach ($arrayHari as $hari) {
-                $sql = "SELECT kode, matakuliah, kelas, pengampu, hari, jam FROM jadwal WHERE hari='$hari'";
-
-                $result = mysqli_query($conn, $sql);
-
-                echo "<h2>$hari</h2>";
-
-                echo "<ol>";
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo  "<li>" . $row["kode"] . " : " . $row["matakuliah"] . " : " . $row["kelas"] . " : " . $row["pengampu"] . " : " . $row["jam"];
-                    }
-                } else {
-                    echo "<p>Tidak ada</p>";
-                }
-                echo "</ol>";
-            }
         }
 
         mysqli_close($conn);
         ?>
+
 	</div>
 
 	<br>
