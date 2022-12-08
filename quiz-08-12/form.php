@@ -44,7 +44,7 @@
 			</tr>
 		</table>
 
-		<p>Barang yang akan dibeli</p>
+		<p>Barang yang akan dibeli (jumlah harus diisi)</p>
 
 		<table border="1" style="margin-top: 10px;margin-bottom: 10px;border: 1px solid black;border-collapse: collapse;">
 			<thead style="background-color: lightblue;">
