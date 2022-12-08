@@ -23,6 +23,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>205314159 - Konfirmasi</title>
 	<style>
+	th,
 	td {
 		padding: 5px 10px 5px 5px;
 	}
